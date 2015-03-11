@@ -1,0 +1,24 @@
+inherited CadastraAluno: TCadastraAluno
+  Left = 424
+  Top = 155
+  Caption = 'CadastraAluno'
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btn_Salvar: TButton
+    Left = 160
+    Top = 184
+  end
+  inherited btn_Sair: TButton
+    Left = 288
+    Top = 184
+  end
+  object Button1: TButton
+    Left = 168
+    Top = 264
+    Width = 313
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,64 @@
+unit uDaoAutor;
+
+interface
+uses
+  uDao, uAutor, SysUtils, uDM, DB;
+  type DaoAutor = class(Dao)
+
+      private
+      protected
+        umDm : TDM;
+      public
+          constructor crieObj; override;
+          destructor destrua_se; override;
+          function salvar (pObj : TObject):  string; override;
+          function excluir (pObj : TObject): string; override;
+          function pesquisar (pObj : TObject; quero : boolean): string; override;
+          function getDS : TDataSource;  override;
+          procedure setDM( pDM : TDM); override;
+end;
+
+implementation
+
+{ DaoAutor }
+
+constructor DaoAutor.crieObj;
+begin
+  inherited;
+
+end;
+
+destructor DaoAutor.destrua_se;
+begin
+
+  inherited;
+end;
+
+function DaoAutor.excluir(pObj: TObject): string;
+begin
+
+end;
+
+function DaoAutor.getDS: TDataSource;
+begin
+
+end;
+
+function DaoAutor.pesquisar(pObj: TObject; quero: boolean): string;
+begin
+
+end;
+
+function DaoAutor.salvar(pObj: TObject): string;
+begin
+
+end;
+
+procedure DaoAutor.setDM(pDM: TDM);
+begin
+  inherited;
+  umDM := pDM;
+end;
+
+end.
+

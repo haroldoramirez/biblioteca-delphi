@@ -1,0 +1,93 @@
+unit uConsultaPais;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, uConsultaPai, ComCtrls, StdCtrls, uCadastraPais, uPais, uControllerPais,
+  Grids, DBGrids;
+
+type
+  TConsultaPais = class(TConsultaPai)
+  private
+    { Private declarations }
+        umCadastraPais : TCadastraPais;
+        umPais : Pais;
+        umaCtrlPais : ControllerPais;
+  public
+    { Public declarations }
+        procedure Novo;    override;
+        procedure Alterar; override;
+        procedure Excluir; override;
+        procedure Sair;    override;
+        procedure pesquisa; override;
+        procedure setCadastro (pObj : TObject); override;
+        procedure conhecaObj (pObj : TObject; pCtrl:TObject);  override;
+  end;
+
+var
+  ConsultaPais: TConsultaPais;
+
+implementation
+
+{$R *.dfm}
+
+{ TConsultaPais }
+
+procedure TConsultaPais.Alterar;
+begin
+  inherited;
+      umCadastraPais.conhecaObj(umPais, umaCtrlPais);
+      umCadastraPais.limpaEdit;
+      umCadastraPais.desbloqueiaEdit;
+      umCadastraPais.carregaEdit;
+      umCadastraPais.ShowModal;
+end;
+
+procedure TConsultaPais.conhecaObj(pObj, pCtrl: TObject);
+begin
+  inherited;
+  umPais := Pais(pObj);
+  umaCtrlPais := ControllerPais(pCtrl);
+end;
+
+procedure TConsultaPais.Excluir;
+begin
+  inherited;
+  umCadastraPais.conhecaObj(umPais, umaCtrlPais);
+  umCadastraPais.limpaEdit;
+  umCadastraPais.carregaEdit;
+  umCadastraPais.bloqueiaEdit;
+  umCadastraPais.btn_Salvar.Caption := 'Excluir';
+  umCadastraPais.ShowModal;
+end;
+
+procedure TConsultaPais.Novo;
+begin
+  inherited;
+  umCadastraPais.conhecaObj(umPais, umaCtrlPais);
+  umCadastraPais.limpaEdit;
+  umCadastraPais.desbloqueiaEdit;
+  umCadastraPais.btn_Salvar.Caption := 'Salvar';
+  umCadastraPais.ShowModal;
+end;
+
+procedure TConsultaPais.pesquisa;
+begin
+  inherited;
+
+end;
+
+procedure TConsultaPais.Sair;
+begin
+  inherited;
+
+end;
+
+procedure TConsultaPais.setCadastro(pObj: TObject);
+begin
+  inherited;
+  umCadastraPais := TCadastraPais(pObj);
+end;
+
+end.

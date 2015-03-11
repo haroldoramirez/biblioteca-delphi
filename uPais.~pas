@@ -1,0 +1,12 @@
+unit uPais;
+
+interface
+      type Pais = class
+
+      protected
+      private
+      public
+end;
+implementation
+
+end.

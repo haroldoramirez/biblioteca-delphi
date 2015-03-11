@@ -1,0 +1,83 @@
+unit uLivro;
+
+interface
+  uses uAutor, uEditora;
+      type Livro = class
+        private
+            codigo : Integer;
+            titulo : string[50];
+            umAutor : Autor;
+            umaEditora : Editora;
+    protected
+    public
+        constructor CrieObj;
+        destructor Destrua_se;
+        procedure setCodigo(pCodigo:Integer);
+        procedure setTitulo(pTitulo:string);
+        procedure setAutor(pAutor:Autor);
+        procedure setEditora(pEditora:Editora);
+        function getCodigo:Integer;
+        function getTitulo:string;
+        function getAutor:Autor;
+        function getEditora:Editora;
+  end;
+
+implementation
+
+{ Livro }
+
+constructor Livro.CrieObj;
+begin
+    codigo := 0;
+    titulo := '';
+    umAutor := Autor.Crie_Obj;
+    umaEditora := Editora.Crie_Obj;
+end;
+
+destructor Livro.Destrua_se;
+begin
+    umAutor.Destrua_se;
+    umaEditora.Destrua_se;
+end;
+
+function Livro.getAutor: Autor;
+begin
+   result := umAutor;
+end;
+
+function Livro.getCodigo: Integer;
+begin
+     result := codigo;
+end;
+
+function Livro.getEditora: Editora;
+begin
+   result := umaEditora;
+end;
+
+function Livro.getTitulo: string;
+begin
+     result := titulo;
+end;
+
+procedure Livro.setAutor(pAutor: Autor);
+begin
+    umAutor := pAutor;
+end;
+
+procedure Livro.setCodigo(pCodigo: Integer);
+begin
+    codigo := pCodigo;
+end;
+
+procedure Livro.setEditora(pEditora: Editora);
+begin
+    umaEditora := pEditora;
+end;
+
+procedure Livro.setTitulo(pTitulo: String);
+begin
+   titulo := pTitulo;
+end;
+
+end.

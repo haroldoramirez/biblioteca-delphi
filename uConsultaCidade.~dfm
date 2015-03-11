@@ -1,0 +1,5 @@
+inherited ConsultaPai1: TConsultaPai1
+  Caption = 'ConsultaPai1'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

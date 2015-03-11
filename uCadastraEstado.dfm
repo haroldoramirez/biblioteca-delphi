@@ -1,0 +1,70 @@
+inherited CadastraEstado: TCadastraEstado
+  Left = 871
+  Top = 166
+  Width = 305
+  Height = 353
+  Caption = 'CadastraEstado'
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lbl_Codigo: TLabel
+    Left = 32
+    Top = 32
+  end
+  object lbl_Descricao: TLabel [1]
+    Left = 32
+    Top = 80
+    Width = 48
+    Height = 13
+    Caption = 'Descri'#231#227'o'
+  end
+  object lbl_Sigla: TLabel [2]
+    Left = 32
+    Top = 146
+    Width = 23
+    Height = 13
+    Caption = 'Sigla'
+  end
+  object lbl_Pais: TLabel [3]
+    Left = 32
+    Top = 200
+    Width = 22
+    Height = 13
+    Caption = 'Pa'#237's'
+  end
+  inherited edt_Codigo: TEdit
+    Left = 32
+    Top = 48
+    Width = 81
+  end
+  inherited btn_Salvar: TButton
+    Left = 88
+    Top = 272
+    OnClick = btn_SalvarClick
+  end
+  inherited btn_Sair: TButton
+    Left = 184
+    Top = 272
+  end
+  object edt_Descricao: TEdit
+    Left = 32
+    Top = 96
+    Width = 225
+    Height = 21
+    TabOrder = 3
+  end
+  object edt_Sigla: TEdit
+    Left = 32
+    Top = 160
+    Width = 57
+    Height = 21
+    TabOrder = 4
+  end
+  object edt_Pais: TEdit
+    Left = 32
+    Top = 216
+    Width = 129
+    Height = 21
+    TabOrder = 5
+  end
+end

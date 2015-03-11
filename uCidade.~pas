@@ -1,0 +1,82 @@
+unit uCidade;
+
+interface
+   uses uEstado;
+     type Cidade = class
+
+     protected
+     private
+          codigo : integer;
+          descricao : string[50];
+          ddd : string[5];
+          umEstado : Estado;
+     public
+          constructor crie_Obj;
+          destructor destrua_Se;
+          procedure setCodigo( pCodigo : integer);
+          procedure setDescricao( pDescricao : string);
+          procedure setDdd( pDdd : string);
+          procedure setUmEstado( pUmEstado : Estado);
+          function getCodigo : integer;
+          function getDescricao : string;
+          function getDdd : string;
+          function getUmEstado : Estado;
+end;
+implementation
+
+{ Cidade }
+
+constructor Cidade.crie_Obj;
+begin
+    codigo := 0;
+    descricao := '';
+    ddd := '';
+    umEstado := Estado.crie_Obj;
+end;
+
+destructor Cidade.destrua_Se;
+begin
+    umEstado.destrua_Se;
+end;
+
+function Cidade.getCodigo: integer;
+begin
+    result := codigo;
+end;
+
+function Cidade.getDdd: string;
+begin
+    result := ddd;
+end;
+
+function Cidade.getDescricao: string;
+begin
+    result := descricao;
+end;
+
+function Cidade.getUmEstado: Estado;
+begin
+    result := umEstado;
+end;
+
+procedure Cidade.setCodigo(pCodigo: integer);
+begin
+    codigo := pCodigo;
+end;
+
+procedure Cidade.setDdd(pDdd: string);
+begin
+    ddd := pDdd;
+end;
+
+procedure Cidade.setDescricao(pDescricao: string);
+begin
+
+end;
+
+procedure Cidade.setUmEstado(pUmEstado: Estado);
+begin
+
+end;
+
+end.
